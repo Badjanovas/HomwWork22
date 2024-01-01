@@ -14,17 +14,14 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
-    private String description;
     private Boolean completed;
 
     @ManyToOne
     @JoinColumn(name = "familyMember_id")
     private FamilyMember familyMember;
 
-    public Task(String title, String description, Boolean completed, FamilyMember familyMember) {
+    public Task(String title, Boolean completed) {
         this.title = title;
-        this.description = description;
         this.completed = completed;
-        this.familyMember = familyMember;
     }
 }
